@@ -1,6 +1,7 @@
 # Project Specific
 8080Disassembler
 *.COM
+*.json
 
 # Valgrind
 vgcore*.*
