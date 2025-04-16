@@ -24,7 +24,7 @@ all: clean format $(TARGET)
 full: all leak-check
 
 $(TARGET):
-	$(CC) $(CPP_FLAGS) -o $(TARGET) $(SRC_FILES) -I./$(INCL)/
+	$(CC) $(CPP_FLAGS) -o $(TARGET) $(SRC_FILES) -I./$(INCL_DIR)/
 
 clean:
 	-@rm vgcore.* 2>/dev/null || true
@@ -35,4 +35,4 @@ leak-check: $(TARGET)
 	$(LEAK_CHKR) $(LEAK_CHK_FLAGS) ./$(TARGET)
 
 format:
-	$(AUTO_FMT) $(FMT_FLAGS) -i $(SRC_FILES) $(INCL_FILES)
+	$(AUTO_FMT) $(FMT_FLAGS) -i $(SRC_FILES) $(INCL_DIR)/*
